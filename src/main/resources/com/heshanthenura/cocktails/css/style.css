@@ -1,0 +1,17 @@
+.searchBar {
+    -fx-background-color: #f2f2f2;
+    -fx-effect: dropshadow(
+            three-pass-box,
+            rgba(0, 0, 0, 0.3),
+            5,
+            0,
+            0,
+            1
+    );
+}
+
+.searchBtn{
+    -fx-background-color: #001834;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+}
