@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -36,7 +37,7 @@
                   </HBox>
                   <HBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <TextField prefHeight="25.0" prefWidth="228.0" promptText="Search" styleClass="searchBar" />
+                        <TextField fx:id="searchBarInp" prefHeight="25.0" prefWidth="228.0" promptText="Search" styleClass="searchBar" />
                         <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@assets/search.png" />
@@ -44,9 +45,14 @@
                         </ImageView>
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="refreshBtn" mnemonicParsing="false" text="REFRESH" />
+                     </children>
+                  </HBox>
                </children>
             </HBox>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <TabPane prefHeight="200.0" prefWidth="200.0" styleClass="tabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
               <tabs>
                 <Tab text="Home">
                      <content>
@@ -61,7 +67,7 @@
                         </ScrollPane>
                      </content>
                 </Tab>
-                <Tab text="Untitled Tab 2">
+                <Tab text="Filters">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
