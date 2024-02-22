@@ -1,32 +1,49 @@
-.searchBar {
-    -fx-background-color: #f2f2f2;
-    -fx-effect: dropshadow(
-            three-pass-box,
-            rgba(0, 0, 0, 0.3),
-            5,
-            0,
-            0,
-            1
-    );
+#background {
+    -fx-background-color: #ffffff;
 }
 
-.searchBtn {
-    -fx-background-color: #001834;
-    -fx-background-radius: 5px;
-    -fx-text-fill: white;
+.card {
+    -fx-background-color: #ffffff;
 }
 
+.img {
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #ffffff;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: #ff0000;
+    -fx-pref-width: 20px;
+}
+
+.tab-pane .tab-header-background  {
+    -fx-background-color: #ffffff;
+}
 .tab {
-    -fx-background-color: #001834;
-    -fx-background-radius: 0px;
+    -fx-background-color: #ffffff; /* Set the background color of the tabs */
+}
+.orderButton{
+    -fx-background-color: #856f5e;
     -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
     -fx-text-fill: white;
 }
-.tab-label {
-    -fx-text-fill: white ;
-    -fx-font-family: Calibri;
-    -fx-font-size: 20px;
+
+.ingredient{
+    -fx-background-color: #d2d2d2;
+    -fx-padding: 0px 5px 0px 5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
-.tab-header-background {
-    -fx-background-color: none;
+
+.tabBtn{
+    -fx-background-color: #856f5e;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-text-fill: white;
 }
+

@@ -1,5 +1,6 @@
 package com.heshanthenura.cocktails.services;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,7 +20,6 @@ public class JSONService {
         JsonNode jsonNode = objectMapper.readTree(jsonString);
         ArrayNode arrayNode = (ArrayNode) jsonNode.get("drinks");
         for (JsonNode node : arrayNode) {
-
             List<String> ingredients = new ArrayList<>();
             List<String> measurements = new ArrayList<>();
             Cocktail cocktail = new Cocktail();
@@ -33,23 +33,20 @@ public class JSONService {
             cocktail.setGlass(node.get("strGlass").asText());
             cocktail.setInstructions(List.of(node.get("strInstructions").asText().split("\\.")));
             cocktail.setImgUrl(node.get("strDrinkThumb").asText());
-
             for (int i = 1; i <= 15; i++) {
                 JsonNode ingredientNode = node.get("strIngredient" + i);
                 ingredients.add(ingredientNode.asText());
             }
             cocktail.setIngredients(ingredients);
-
             for (int i = 1; i <= 15; i++) {
                 JsonNode ingredientNode = node.get("strMeasure" + i);
                 measurements.add(ingredientNode.asText());
             }
             cocktail.setMeasurements(measurements);
-
-
             cocktails.add(cocktail);
         }
-
+        System.out.println("done making cards");
         return cocktails;
+
     }
 }
