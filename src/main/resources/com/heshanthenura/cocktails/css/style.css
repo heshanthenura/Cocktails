@@ -16,7 +16,7 @@
 }
 
 .scroll-pane .scroll-bar {
-    -fx-background-color: #ff0000;
+    -fx-background-color: #ffffff;
     -fx-pref-width: 20px;
 }
 
@@ -27,7 +27,7 @@
     -fx-background-color: #ffffff; /* Set the background color of the tabs */
 }
 .orderButton{
-    -fx-background-color: #856f5e;
+    -fx-background-color: #001834;
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
     -fx-text-fill: white;
@@ -41,7 +41,7 @@
 }
 
 .tabBtn{
-    -fx-background-color: #856f5e;
+    -fx-background-color: #001736;
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
     -fx-text-fill: white;
