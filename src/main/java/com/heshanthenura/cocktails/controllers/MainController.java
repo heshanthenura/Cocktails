@@ -1,38 +1,56 @@
 package com.heshanthenura.cocktails.controllers;
 
 
-import com.heshanthenura.cocktails.MainApplication;
-import com.heshanthenura.cocktails.entity.Cocktail;
-import com.heshanthenura.cocktails.services.APIService;
+import com.heshanthenura.cocktails.entity.IngredientAmount;
 import com.heshanthenura.cocktails.services.AddCard;
-import com.heshanthenura.cocktails.services.JSONService;
+import com.heshanthenura.cocktails.services.Communicator;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 public class MainController implements Initializable {
 
     @FXML
-    private FlowPane flowPane;
+    public Button detailsCloseBtn;
+
+    @FXML
+    public Text detailsDrinkLbl;
+
+    @FXML
+    public ImageView detailsImgView;
+
+    @FXML
+    public StackPane detailsPane;
+
+    @FXML
+    public FlowPane flowPane;
+
+    @FXML
+    public VBox ingredientsVbox;
+
+    @FXML
+    public VBox instructionsVbox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Platform.runLater(() -> {
+
+            new Communicator().setMainController(this);
+
             for (int i = 0; i < 20; i++) {
                 Task<Void> task = new AddCard().createAddCardTask(flowPane, "https://www.thecocktaildb.com/api/json/v1/1/random.php");
                 task.setOnSucceeded(event -> {
@@ -43,8 +61,17 @@ public class MainController implements Initializable {
                 });
                 new Thread(task).start();
             }
+
+            detailsCloseBtn.setOnMouseClicked(e->{
+                detailsPane.setVisible(false);
+            });
+
+
+
+
         });
     }
+
 
 
     //    https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita

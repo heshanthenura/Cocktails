@@ -32,6 +32,7 @@ public class AddCard {
                 cardController.drinkNameLbl.setText(cocktail.getDrinkName());
                 cardController.alcoholicLbl.setText(cocktail.getAlcoholic());
                 cardController.imgView.setImage(new Image(cocktail.getImgUrl()));
+                cardController.cocktail=cocktail;
                 Platform.runLater(()->{
                     flowPane.getChildren().add(cardRoot);
                 });
